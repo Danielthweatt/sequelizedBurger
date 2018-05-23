@@ -1,0 +1,51 @@
+<body class="container-fluid">
+<header>
+    <div id="img">
+        <img src="/assets/image/burger.jpg" alt="burger" class="img-thumbnail">
+    </div>
+</header>
+<main>
+<div class="row">
+    <div class="col-md-1 col-lg-2"></div>
+    <div class="col-6 col-md-5 col-lg-4">
+        <h5 class="text-center">Undevoured Burgers:</h5>
+        <ul class="list-group">
+            {{#each burgers}}
+                {{#unless devoured}}
+                    <li class="list-group-item">
+	                    {{burger_name}}
+	                    <button type="button" class="btn btn-success devour" data-id="{{id}}">
+                            Devour!
+	                    </button>
+                    </li>
+                {{/unless}}
+            {{/each}}
+        </ul>
+    </div>
+    <div class="col-6 col-md-5 col-lg-4">
+        <h5 class="text-center">Devoured Burgers:</h5>
+        <ul class="list-group">
+            {{#each burgers}}
+                {{#if devoured}}
+                    <li class="list-group-item">
+	                    {{burger_name}}
+                    </li>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</div>
+<h5 class="text-center" id="enter">Enter a new burger:</h5>
+<div class="row">
+    <div class="col-1 col-sm-2 col-md-3 col-lg-4"></div>
+    <div class="col-10 col-sm-8 col-md-6 col-lg-4">
+        <form id="addBurger">
+            <div class="form-group">
+                <input type="text" class="form-control" id="burger">
+            </div>
+            <button type="submit" class="btn btn-primary" style="float: none">Submit</button>
+        </form>
+    </div>
+</div>
+</main>    
+</body>

@@ -1,0 +1,24 @@
+header {
+    margin: 20px 0;
+}
+
+#img {
+    max-width: 25%;
+    margin: auto;
+}
+
+button {
+    float: right;
+}
+
+#enter {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 640px) {
+
+    #img {
+        max-width: 40%;
+    }
+
+}
