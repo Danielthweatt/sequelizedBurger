@@ -3,6 +3,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers/burgers_controller.js");
+const db = require("./models");
 
 // App Setup
 const PORT = process.env.PORT || 3000;
@@ -17,6 +18,8 @@ app.set("view engine", "handlebars");
 app.use(routes);
 
 // Server Start
-app.listen(PORT, function(){
-    console.log("App now listening at localhost:" + PORT);
+db.sequelize.sync().then(function(){
+    app.listen(PORT, function(){
+        console.log("App listening on PORT " + PORT);
+    });
 });

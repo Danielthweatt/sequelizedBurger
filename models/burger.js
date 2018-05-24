@@ -15,5 +15,5 @@ module.exports = function(sequelize, DataTypes) {
         timestamps: true,
         updatedAt: false
     });
-        return Todo;
+    return Burger;
 };
