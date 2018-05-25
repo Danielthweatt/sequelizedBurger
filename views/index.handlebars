@@ -11,10 +11,10 @@
         <h5 class="text-center">Undevoured Burgers:</h5>
         <ul class="list-group">
             {{#each burgers}}
-                {{#unless devoured}}
+                {{#unless dataValues.devoured}}
                     <li class="list-group-item">
-	                    {{burger_name}}
-	                    <button type="button" class="btn btn-success devour" data-id="{{id}}">
+	                    {{dataValues.burger_name}}
+	                    <button type="button" class="btn btn-success devour" data-id="{{dataValues.id}}">
                             Devour!
 	                    </button>
                     </li>
@@ -26,9 +26,9 @@
         <h5 class="text-center">Devoured Burgers:</h5>
         <ul class="list-group">
             {{#each burgers}}
-                {{#if devoured}}
+                {{#if dataValues.devoured}}
                     <li class="list-group-item">
-	                    {{burger_name}}
+	                    {{dataValues.burger_name}}
                     </li>
                 {{/if}}
             {{/each}}
